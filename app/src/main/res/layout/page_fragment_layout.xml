@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,29 +6,220 @@
     tools:context="com.hackathon.dadbod.dadbod.PageFragment">
 
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/Hobbies"
+        android:layout_width="379dp"
+        android:layout_height="81dp"
+        android:text="Hobbies"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/ProfilePicture"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
-        android:ems="10"
-        android:inputType="textPersonName"
+    <TextView
+        android:id="@+id/Job"
+        android:layout_width="161dp"
+        android:layout_height="37dp"
+        android:text="Job_Description"
+        android:textSize="14sp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/ProfilePicture"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/Dad_Name"
+        app:layout_constraintHorizontal_bias="0.578"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
-        android:text="DADBOD"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="104dp" />
+    <TextView
+        android:id="@+id/Age"
+        android:layout_width="161dp"
+        android:layout_height="37dp"
+        android:text="Age"
+        android:textSize="14sp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/ProfilePicture"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/School"
+        app:layout_constraintHorizontal_bias="0.526"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/School"
+        android:layout_width="161dp"
+        android:layout_height="37dp"
+        android:text="University"
+        android:textSize="14sp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/ProfilePicture"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/Job"
+        app:layout_constraintHorizontal_bias="0.526"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/dad"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        app:srcCompat="@drawable/dadbod"
+        android:contentDescription="@string/Title"
+        android:layout_marginEnd="27dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-167dp"
+        app:layout_constraintLeft_toRightOf="@+id/profile"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintRight_toLeftOf="@+id/chat"
+        android:layout_marginRight="27dp"
+        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginStart="8dp" />
 
-</RelativeLayout>
+    <ImageButton
+        android:id="@+id/beer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/beerclink"
+        android:contentDescription="@string/beer"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.501" />
+
+    <ImageButton
+        android:id="@+id/dislike"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/x"
+        android:contentDescription="@string/dislike"
+        app:layout_constraintRight_toLeftOf="@+id/beer"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/beer" />
+
+    <ImageButton
+        android:id="@+id/like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/fistbump"
+        android:contentDescription="@string/like"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/beer"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintLeft_toRightOf="@+id/beer"
+        android:layout_marginLeft="1dp" />
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/backarrow"
+        android:contentDescription="@string/back"
+        app:layout_constraintRight_toLeftOf="@+id/dislike"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/dislike"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginRight="1dp" />
+
+    <ImageButton
+        android:id="@+id/forward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/forwardarrow"
+        android:contentDescription="@string/forward"
+        tools:layout_constraintBottom_creator="1"
+        android:layout_marginStart="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/like"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintLeft_toRightOf="@+id/like"
+        android:layout_marginLeft="1dp" />
+
+    <ImageButton
+        android:id="@+id/chat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/mychats"
+        android:contentDescription="@string/chat"
+        android:layout_marginEnd="37dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="-200dp"
+        android:layout_marginRight="-106dp"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageButton
+        android:id="@+id/profile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/myprofile"
+        android:contentDescription="@string/profile"
+        android:layout_marginStart="34dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="34dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <ImageView
+        android:id="@+id/ProfilePicture"
+        android:layout_width="207dp"
+        android:layout_height="216dp"
+        app:srcCompat="@drawable/dad"
+        android:layout_marginLeft="404dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="-270dp"
+        app:layout_constraintTop_toBottomOf="@+id/profile"
+        android:layout_marginStart="8dp" />
+
+    <TextView
+        android:id="@+id/Dad_Name"
+        android:layout_width="161dp"
+        android:layout_height="37dp"
+        android:text="First_Name_Last_Name"
+        android:textSize="14sp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/ProfilePicture"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/chat"
+        app:layout_constraintHorizontal_bias="0.526"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
+    <TextView
+        android:id="@+id/Sports"
+        android:layout_width="379dp"
+        android:layout_height="81dp"
+        android:text="Sports"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginRight="8dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/Hobbies"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/beer"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintVertical_bias="0.0" />
+
+</android.support.constraint.ConstraintLayout>
+
+

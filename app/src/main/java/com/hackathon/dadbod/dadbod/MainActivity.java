@@ -1,5 +1,7 @@
 package com.hackathon.dadbod.dadbod;
 
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -23,7 +25,5 @@ public class MainActivity extends FragmentActivity {
         viewPager = (ViewPager)findViewById(R.id.view_pager);
         SwipeAdapter swipeAdapter = new SwipeAdapter(getSupportFragmentManager());
         viewPager.setAdapter(swipeAdapter);
-
-
     }
 }

@@ -36,19 +36,11 @@ public class LoginActivity extends AppCompatActivity {
 
     private static final String TAG = "SignInActivity";
 
-    private static final int RC_SIGN_IN = 9001;
-
     private Button signIn;
-
-    private Button gSignIn;
 
     private EditText email;
 
     private EditText password;
-
-    private GoogleApiClient mGoogleApiClient;
-
-    private TextView mStatusTextView;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +63,6 @@ public class LoginActivity extends AppCompatActivity {
         password = (EditText) findViewById(R.id.editText2);
         password = (EditText) findViewById(R.id.editText2);
         signIn =(Button) findViewById(R.id.signup);
-        gSignIn = (Button) findViewById(R.id.g_sign_in_button);
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

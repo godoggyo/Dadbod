@@ -26,4 +26,7 @@ public class MainActivity extends FragmentActivity {
 
 
     }
+    public void setCurrentItem(int item, boolean smoothScroll){
+        viewPager.setCurrentItem(item, smoothScroll);
+    }
 }

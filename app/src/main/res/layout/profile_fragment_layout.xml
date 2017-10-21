@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hackathon.dadbod.dadbod.ProfileFragment">
+
+    <EditText
+        android:id="@+id/Dad_Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="48dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Dad_Name" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="218dp"
+        app:srcCompat="@drawable/beerclink"
+        android:layout_below="@+id/Dad_Name"
+        android:layout_alignRight="@+id/Dad_Name"
+        android:layout_alignEnd="@+id/Dad_Name"
+        android:layout_marginRight="65dp"
+        android:layout_marginEnd="65dp" />
+</RelativeLayout>

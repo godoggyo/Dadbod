@@ -1,8 +1,6 @@
 package com.hackathon.dadbod.dadbod;
 
 import android.app.Fragment;
-import android.app.FragmentTransaction;
-import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -13,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,6 +28,10 @@ public class FragmentSignIn extends Fragment {
     private Button login;
 
     private Button register;
+
+    private EditText email;
+
+    private EditText password;
 
     private FirebaseAuth mAuth;
 
@@ -67,21 +68,20 @@ public class FragmentSignIn extends Fragment {
             }
         };
 
+        email = (EditText) v.findViewById(R.id.etEmail);
+        password = (EditText) v.findViewById(R.id.etPassword);
         register = (Button) v.findViewById(R.id.bsignup);
         login = (Button) v.findViewById(R.id.blogin);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Test", Toast.LENGTH_LONG).show();
-                //might be bugs with this statement here.
-                signIn(v.findViewById(R.id.etEmail).toString(), v.findViewById(R.id.etPassword).toString());
+                signIn(email.getText().toString(), password.getText().toString());
             }
         });
         register.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Test", Toast.LENGTH_LONG).show();
-                FragmentChangeListener fcl = (FragmentChangeListener) getActivity();
+                ActivityFragmentListener fcl = (ActivityFragmentListener) getActivity();
                 fcl.replaceFragment(Activity_Tags.FRAGMENT_SIGN_UP);
             }
         });
@@ -95,18 +95,16 @@ public class FragmentSignIn extends Fragment {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "signInWithEmail:onComplete:" + task.isSuccessful());
 
-                        // If sign in fails, display a message to the user. If sign in succeeds
-                        // the auth state listener will be notified and logic to handle the
-                        // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail:failed", task.getException());
-                            Toast.makeText(getActivity(), R.string.auth_failed,
-                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Login Failed", Toast.LENGTH_LONG).show();
                         }
-                        if(task.isSuccessful()){
-                            Intent myIntent = new Intent(getActivity(), MainActivity.class);
-                            startActivity(myIntent);
+                        else{
+                            Toast.makeText(getActivity(), "Login Successful", Toast.LENGTH_LONG).show();
+                            ActivityFragmentListener fcl = (ActivityFragmentListener) getActivity();
+                            fcl.changeActivity();
                         }
+
                     }
                 });
     }

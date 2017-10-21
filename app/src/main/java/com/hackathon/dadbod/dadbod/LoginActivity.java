@@ -3,8 +3,8 @@ package com.hackathon.dadbod.dadbod;
 
 
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.app.FragmentManager;
 import android.support.v4.app.FragmentActivity;
@@ -14,7 +14,7 @@ import android.support.v4.app.FragmentActivity;
  * Created by iowaf on 10/20/2017.
  */
 
-public class LoginActivity extends FragmentActivity implements FragmentChangeListener {
+public class LoginActivity extends FragmentActivity implements ActivityFragmentListener {
 
     private FragmentManager fm;
 
@@ -36,5 +36,15 @@ public class LoginActivity extends FragmentActivity implements FragmentChangeLis
             ftransaction.replace(R.id.contentFragment, new FragmentSignUp());
             ftransaction.commit();
         }
+        else if(activityTag == Activity_Tags.FRAGMENT_SIGN_IN){
+            ftransaction.replace(R.id.contentFragment, new FragmentSignIn());
+            ftransaction.commit();
+        }
+    }
+
+    @Override
+    public void changeActivity() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }

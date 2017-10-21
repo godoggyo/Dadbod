@@ -10,6 +10,20 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="Welcome To Account Creation"
+            android:textSize="25dp"
+            android:textColor="@color/colorAccent"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome to Dadbod! Let us help connect you with other dads in your area with similar interests. *Any other info here*"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="Account Info"
             android:textSize="25dp"
             android:textColor="@color/colorAccent"
@@ -29,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:inputType="textPassword"
-            android:hint="Password"/>
+            android:hint="Create Password"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -54,6 +68,14 @@
             android:hint="Occupation"/>
 
         <EditText
+            android:id="@+id/etCollege"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="College"
+            />
+
+        <EditText
             android:id="@+id/etAge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,7 +87,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Upload Profile Image"
-            android:layout_marginBottom="10dp"/>
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -79,29 +103,92 @@
             android:layout_height="wrap_content"
             android:text="Hobbies" />
 
-        <RadioButton
-            android:id="@+id/rbGrilling"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Grilling"/>
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <RadioButton
-            android:id="@+id/rbFishing"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fishing" />
+            <RadioGroup>
 
-        <RadioButton
-            android:id="@+id/rbSportsball"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sportsball" />
+                <RadioButton
+                    android:id="@+id/rbGrilling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grilling" />
 
-        <RadioButton
-            android:id="@+id/rbWoodworking"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Woodworking"/>
+                <RadioButton
+                    android:id="@+id/rbBeerTasting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Beer Tasting" />
+
+                <RadioButton
+                    android:id="@+id/rbBrewing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Brewing" />
+
+                <RadioButton
+                    android:id="@+id/rbCooking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cooking" />
+
+            </RadioGroup>
+
+            <RadioGroup>
+                <RadioButton
+                    android:id="@+id/rbCamping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Camping" />
+
+                <RadioButton
+                    android:id="@+id/rbFishing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fishing" />
+
+                <RadioButton
+                    android:id="@+id/rbHiking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hiking" />
+
+                <RadioButton
+                    android:id="@+id/rbWoodworking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Woodworking" />
+            </RadioGroup>
+
+            <RadioGroup>
+                <RadioButton
+                    android:id="@+id/rbBaseball"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Baseball" />
+
+                <RadioButton
+                    android:id="@+id/rbBasketball"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Basketball" />
+
+                <RadioButton
+                    android:id="@+id/rbFootball"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Football" />
+
+                <RadioButton
+                    android:id="@+id/rbSoccer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Soccer" />
+            </RadioGroup>
+
+        </GridLayout>
+
 
         <EditText
             android:layout_width="match_parent"

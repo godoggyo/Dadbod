@@ -5,26 +5,142 @@
     android:layout_height="match_parent"
     tools:context="com.hackathon.dadbod.dadbod.ProfileFragment">
 
-    <EditText
-        android:id="@+id/Dad_Name"
+    <ImageButton
+        android:id="@+id/Chat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="48dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Dad_Name" />
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/Dadbod"
+        android:layout_toRightOf="@+id/Dadbod"
+        android:contentDescription="@string/chat"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mychats" />
+
+    <TextView
+        android:id="@+id/Dad_Name"
+        android:layout_width="161dp"
+        android:layout_height="37dp"
+        android:text="First_Name_Last_Name"
+        android:textSize="14sp"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintLeft_toRightOf="@+id/ProfilePicture"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chat"
+        android:layout_alignTop="@+id/ProfilePicture"
+        android:layout_alignLeft="@+id/Job"
+        android:layout_alignStart="@+id/Job" />
+
+    <TextView
+        android:id="@+id/Job"
+        android:layout_width="161dp"
+        android:layout_height="37dp"
+        android:text="Job_Description"
+        android:textSize="14sp"
+        app:layout_constraintHorizontal_bias="0.578"
+        app:layout_constraintLeft_toRightOf="@+id/ProfilePicture"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Dad_Name"
+        android:layout_below="@+id/Dad_Name"
+        android:layout_alignLeft="@+id/University"
+        android:layout_alignStart="@+id/University"
+        android:layout_marginTop="23dp" />
+
+    <TextView
+        android:id="@+id/University"
+        android:layout_width="161dp"
+        android:layout_height="37dp"
+        android:text="University"
+        android:textSize="14sp"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintLeft_toRightOf="@+id/ProfilePicture"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Job"
+        android:layout_above="@+id/Age"
+        android:layout_alignLeft="@+id/Age"
+        android:layout_alignStart="@+id/Age"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/Age"
+        android:layout_width="161dp"
+        android:layout_height="37dp"
+        android:text="Age"
+        android:textSize="14sp"
+        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintLeft_toRightOf="@+id/ProfilePicture"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/School"
+        android:layout_above="@+id/Hobbies"
+        android:layout_alignRight="@+id/Hobbies"
+        android:layout_alignEnd="@+id/Hobbies"
+        android:layout_marginBottom="9dp" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/Dadbod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="218dp"
-        app:srcCompat="@drawable/beerclink"
-        android:layout_below="@+id/Dad_Name"
-        android:layout_alignRight="@+id/Dad_Name"
-        android:layout_alignEnd="@+id/Dad_Name"
-        android:layout_marginRight="65dp"
-        android:layout_marginEnd="65dp" />
+        android:layout_marginTop="21dp"
+        android:contentDescription="@string/Title"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toRightOf="@+id/profile"
+        app:layout_constraintRight_toLeftOf="@+id/chat"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dadbod"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/Sports"
+        android:layout_width="379dp"
+        android:layout_height="81dp"
+        android:layout_below="@+id/Hobbies"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:text="Sports"
+        app:layout_constraintBottom_toTopOf="@+id/beer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Hobbies" />
+
+    <TextView
+        android:id="@+id/Hobbies"
+        android:layout_width="379dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="21dp"
+        android:text="Hobbies"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ProfilePicture"
+        android:layout_below="@+id/ProfilePicture"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/ProfilePicture"
+        android:layout_width="207dp"
+        android:layout_height="216dp"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile"
+        app:srcCompat="@drawable/dad"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:id="@+id/Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Dadbod"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:layout_toLeftOf="@+id/Dadbod"
+        android:layout_toStartOf="@+id/Dadbod"
+        app:srcCompat="@drawable/backarrow" />
+
 </RelativeLayout>

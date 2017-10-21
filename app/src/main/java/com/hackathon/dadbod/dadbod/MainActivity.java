@@ -18,7 +18,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends FragmentActivity implements FragmentChangeListener {
     ViewPager viewPager;
-
     FragmentManager fm;
 
     @Override
@@ -45,5 +44,14 @@ public class MainActivity extends FragmentActivity implements FragmentChangeList
             ftransaction.replace(R.id.contentFragment, new ProfileFragment());
             ftransaction.commit();
         }
+        else if(activityTag == Activity_Tags.FRAGMENT_CHAT){
+            viewPager.setVisibility(View.GONE);
+            ftransaction.replace(R.id.contentFragment, new ProfileFragment());
+            ftransaction.commit();
+        }
+        else if(activityTag == Activity_Tags.FRAGMENT_PAGE){
+            viewPager.setCurrentItem(1);
+        }
+
     }
 }

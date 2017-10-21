@@ -1,7 +1,6 @@
 package com.hackathon.dadbod.dadbod;
 
 
-import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class PageFragment extends Fragment {
@@ -28,7 +26,7 @@ public class PageFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.page_fragment_layout,container,false);
-        textView1 = (TextView)view.findViewById(R.id.Name);
+        textView1 = (TextView)view.findViewById(R.id.Dad_Name);
         textView = (TextView)view.findViewById(R.id.Job);
         textView = (TextView)view.findViewById(R.id.Sports);
         textView = (TextView)view.findViewById(R.id.School);
@@ -96,7 +94,8 @@ public class PageFragment extends Fragment {
         androidImageButton7.setImageResource(R.drawable.mychats);
         androidImageButton7.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //((MainActivity)getActivity()).setCurrentItem(bundle.getInt("count"), true);
+                FragmentChangeListener fcl = (FragmentChangeListener) getActivity();
+                fcl.replaceFragment(Activity_Tags.FRAGMENT_CHAT);
             }
         });
 

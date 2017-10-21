@@ -8,5 +8,6 @@ public enum Activity_Tags {
     FRAGMENT_SIGN_IN,
     FRAGMENT_SIGN_UP,
     FRAGMENT_PAGE,
-    FRAGMENT_PROFILE
+    FRAGMENT_PROFILE,
+    FRAGMENT_CHAT
 }

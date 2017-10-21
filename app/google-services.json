@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "349989906448",
+    "firebase_url": "https://dadbod-6cb6d.firebaseio.com",
+    "project_id": "dadbod-6cb6d",
+    "storage_bucket": "dadbod-6cb6d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349989906448:android:2fc1de683d831e41",
+        "android_client_info": {
+          "package_name": "com.hackathon.dadbod.dadbod"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349989906448-71tf74olth79837qms0bnbausorsuq4r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hackathon.dadbod.dadbod",
+            "certificate_hash": "5830da98280a2c9d6d67bbca3804c6a6df7fb668"
+          }
+        },
+        {
+          "client_id": "349989906448-tb8f0m1l5rvdm5c9gjt8sj59qejmdl4d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZGOgWmdK5hQ1lwSeQNWAYaSunLIrbpXo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349989906448-tb8f0m1l5rvdm5c9gjt8sj59qejmdl4d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

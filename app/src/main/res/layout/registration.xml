@@ -66,7 +66,6 @@
         android:textColor="@color/colorAccent"/>
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hobbies" />
@@ -94,6 +93,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Woodworking"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Bio: Tell us about yourself interests favorite food, beer, whatever is important to you."/>
 
 
 </LinearLayout>

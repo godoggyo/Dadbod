@@ -87,7 +87,8 @@ public class PageFragment extends Fragment {
         androidImageButton6.setImageResource(R.drawable.myprofile);
         androidImageButton6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                ((MainActivity)getActivity()).setCurrentItem(bundle.getInt("count"), true);
+                FragmentChangeListener fcl = (FragmentChangeListener) getActivity();
+                fcl.replaceFragment(Activity_Tags.FRAGMENT_PROFILE);
             }
         });
 
@@ -101,5 +102,7 @@ public class PageFragment extends Fragment {
 
         return view;
     }
+
+
 
 }

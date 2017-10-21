@@ -1,103 +1,112 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:padding="10dp"
     android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Account Info"
-        android:textSize="25dp"
-        android:textColor="@color/colorAccent"
-        android:layout_marginBottom="10dp"/>
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/etEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:inputType="textEmailAddress"
-        android:hint="Email Address"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Account Info"
+            android:textSize="25dp"
+            android:textColor="@color/colorAccent"
+            android:layout_marginBottom="10dp"/>
 
-    <EditText
-        android:id="@+id/etPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:inputType="textPassword"
-        android:hint="Password"/>
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:inputType="textEmailAddress"
+            android:hint="Email Address"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Essential Information"
-        android:textSize="25dp"
-        android:textColor="@color/colorAccent"
-        android:layout_marginBottom="10dp"/>
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:inputType="textPassword"
+            android:hint="Password"/>
 
-    <EditText
-        android:id="@+id/etName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:hint="Name"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Essential Information"
+            android:textSize="25dp"
+            android:textColor="@color/colorAccent"
+            android:layout_marginBottom="10dp"/>
 
-    <EditText
-        android:id="@+id/etOccupation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:hint="Occupation"/>
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Name"/>
 
-    <EditText
-        android:id="@+id/etAge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:hint="Age"/>
+        <EditText
+            android:id="@+id/etOccupation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Occupation"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Other Information"
-        android:textSize="25dp"
-        android:textColor="@color/colorAccent"/>
+        <EditText
+            android:id="@+id/etAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:hint="Age"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hobbies" />
+        <Button
+            android:id="@+id/bUploadProfileImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload Profile Image"
+            android:layout_marginBottom="10dp"/>
 
-    <RadioButton
-        android:id="@+id/rbGrilling"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Grilling"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Other Information"
+            android:textSize="25dp"
+            android:textColor="@color/colorAccent"/>
 
-    <RadioButton
-        android:id="@+id/rbFishing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fishing" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hobbies" />
 
-    <RadioButton
-        android:id="@+id/rbSportsball"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sportsball" />
+        <RadioButton
+            android:id="@+id/rbGrilling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Grilling"/>
 
-    <RadioButton
-        android:id="@+id/rbWoodworking"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Woodworking"/>
+        <RadioButton
+            android:id="@+id/rbFishing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fishing" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Bio: Tell us about yourself interests favorite food, beer, whatever is important to you."/>
+        <RadioButton
+            android:id="@+id/rbSportsball"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sportsball" />
 
+        <RadioButton
+            android:id="@+id/rbWoodworking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Woodworking"/>
 
-</LinearLayout>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Bio: Tell us about yourself interests favorite food, beer, whatever is important to you."/>
+    </LinearLayout>
+
+</ScrollView>

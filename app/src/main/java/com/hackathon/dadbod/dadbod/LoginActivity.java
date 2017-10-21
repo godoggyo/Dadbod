@@ -59,10 +59,9 @@ public class LoginActivity extends AppCompatActivity {
             }
         };
 
-        email = (EditText) findViewById(R.id.editText);
-        password = (EditText) findViewById(R.id.editText2);
-        password = (EditText) findViewById(R.id.editText2);
-        signIn =(Button) findViewById(R.id.signup);
+        email = (EditText) findViewById(R.id.etEmail);
+        password = (EditText) findViewById(R.id.etPassword);
+        signIn =(Button) findViewById(R.id.blogin);
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

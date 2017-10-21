@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Dadbod</string>
+    <string name="auth_failed" />
 </resources>

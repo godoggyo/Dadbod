@@ -6,5 +6,7 @@ package com.hackathon.dadbod.dadbod;
 
 public enum Activity_Tags {
     FRAGMENT_SIGN_IN,
-    FRAGMENT_SIGN_UP
+    FRAGMENT_SIGN_UP,
+    FRAGMENT_PAGE,
+    FRAGMENT_PROFILE
 }

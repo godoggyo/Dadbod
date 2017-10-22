@@ -58,7 +58,7 @@ public class PageFragment extends Fragment {
         });
 
         ImageButton androidImageButton3 = (ImageButton) view.findViewById(R.id.like);
-        androidImageButton3.setImageResource(R.drawable.fistbump);
+        androidImageButton3.setImageResource(R.drawable.fist_bump_copy);
         androidImageButton3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 ((MainActivity)getActivity()).setCurrentItem(bundle.getInt("count"), true);
@@ -85,7 +85,7 @@ public class PageFragment extends Fragment {
         androidImageButton6.setImageResource(R.drawable.myprofile);
         androidImageButton6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                FragmentChangeListener fcl = (FragmentChangeListener) getActivity();
+                ActivityFragmentListener fcl = (ActivityFragmentListener) getActivity();
                 fcl.replaceFragment(Activity_Tags.FRAGMENT_PROFILE);
             }
         });
@@ -94,7 +94,7 @@ public class PageFragment extends Fragment {
         androidImageButton7.setImageResource(R.drawable.mychats);
         androidImageButton7.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                FragmentChangeListener fcl = (FragmentChangeListener) getActivity();
+                ActivityFragmentListener fcl = (ActivityFragmentListener) getActivity();
                 fcl.replaceFragment(Activity_Tags.FRAGMENT_CHAT);
             }
         });

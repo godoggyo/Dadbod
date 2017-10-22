@@ -108,7 +108,6 @@
             android:layout_height="wrap_content">
 
             <RadioGroup>
-
                 <RadioButton
                     android:id="@+id/rbGrilling"
                     android:layout_width="wrap_content"

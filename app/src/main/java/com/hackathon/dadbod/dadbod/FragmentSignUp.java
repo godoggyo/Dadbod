@@ -1,6 +1,9 @@
 package com.hackathon.dadbod.dadbod;
 
 import android.app.Fragment;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -10,20 +13,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
+
+import static android.app.Activity.RESULT_OK;
 
 /**
  * Created by iowaf on 10/21/2017.
@@ -35,12 +45,18 @@ public class FragmentSignUp extends Fragment {
 
     private FirebaseAuth.AuthStateListener mAuthListener;
 
+    private StorageReference mSrorageRef;
+
     private final String TAG = "";
 
-    private Button cAccount;
+    private final int GALLERY_INTENT = 2;
+
+    private Button cAccount, mSelectImage;
 
     private EditText registrationEmail, registrationPassword, registrationName, registrationOccupation, reistrationCollege,
                         registrationAge;
+
+    private Uri profilePicUri;
 
     public FragmentSignUp(){
 
@@ -78,6 +94,18 @@ public class FragmentSignUp extends Fragment {
         reistrationCollege = (EditText) v.findViewById(R.id.etCollege);
         registrationAge = (EditText) v.findViewById(R.id.etAge);
 
+        mSelectImage = (Button) v.findViewById(R.id.bUploadProfileImage);
+
+        mSelectImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(intent, GALLERY_INTENT);
+            }
+
+        });
 
         cAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,17 +128,32 @@ public class FragmentSignUp extends Fragment {
                         Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
 
                         if (!task.isSuccessful()) {
-                            Toast.makeText(getActivity(), R.string.auth_failed,
+                            Toast.makeText(getActivity(), "Account Creation Failed",
                                     Toast.LENGTH_SHORT).show();
                         }
                         else{
                             String user_id = mAuth.getCurrentUser().getUid();
+                            mSrorageRef = FirebaseStorage.getInstance().getReference().child("ProfilePics");
                             DatabaseReference current_user_db = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
 
                             String name = registrationName.getText().toString();
                             String occupation = registrationOccupation.getText().toString();
                             String college = reistrationCollege.getText().toString();
                             String age = registrationAge.getText().toString();
+
+                            StorageReference filepath = mSrorageRef.child("profilePic" + user_id);
+
+                            filepath.putFile(profilePicUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                                @Override
+                                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    System.out.println("profile picture upload failed");
+                                }
+                            });
 
                             //Add users info to the Firebase
                             Map userData = new HashMap();
@@ -123,6 +166,18 @@ public class FragmentSignUp extends Fragment {
                         }
                     }
                 });
+    }
+
+    @Override public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == GALLERY_INTENT && resultCode == RESULT_OK){
+
+            profilePicUri = data.getData();
+
+            Toast.makeText(getActivity(), "File Recieved", Toast.LENGTH_LONG).show();
+
+        }
     }
 
     @Override

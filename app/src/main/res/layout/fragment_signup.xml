@@ -211,7 +211,9 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Bio: Tell us about yourself interests favorite food, beer, whatever is important to you."
+            android:inputType="textMultiLine"
+            android:hint="Bio: Tell us about yourself interests favorite food, beer, whatever
+                            is important to you."
             android:layout_marginTop="10dp"/>
 
         <Button

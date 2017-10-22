@@ -42,7 +42,7 @@ public class ProfileFragment extends Fragment {
         androidImageButton.setImageResource(R.drawable.backarrow);
         androidImageButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                FragmentChangeListener fcl = (FragmentChangeListener) getActivity();
+                ActivityFragmentListener fcl = (ActivityFragmentListener) getActivity();
                 fcl.replaceFragment(Activity_Tags.FRAGMENT_PAGE);
             }
         });
@@ -51,7 +51,7 @@ public class ProfileFragment extends Fragment {
         androidImageButton.setImageResource(R.drawable.mychats);
         androidImageButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                FragmentChangeListener fcl = (FragmentChangeListener) getActivity();
+                ActivityFragmentListener fcl = (ActivityFragmentListener) getActivity();
                 fcl.replaceFragment(Activity_Tags.FRAGMENT_PAGE);
             }
         });

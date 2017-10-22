@@ -114,7 +114,7 @@
         android:id="@+id/like"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/fistbump"
+        app:srcCompat="@drawable/fist_bump_copy"
         android:contentDescription="@string/like"
         tools:layout_constraintBottom_creator="1"
         android:layout_marginStart="1dp"

@@ -16,7 +16,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends FragmentActivity implements FragmentChangeListener {
+public class MainActivity extends FragmentActivity implements ActivityFragmentListener {
     ViewPager viewPager;
     FragmentManager fm;
 
@@ -52,6 +52,11 @@ public class MainActivity extends FragmentActivity implements FragmentChangeList
         else if(activityTag == Activity_Tags.FRAGMENT_PAGE){
             viewPager.setCurrentItem(1);
         }
+
+    }
+
+    @Override
+    public void changeActivity(){
 
     }
 }
